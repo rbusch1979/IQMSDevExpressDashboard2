@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard CurrencyCulture="en-US">
+  <Title Text="Micro DevExpress Analytic Dashboard Prototype" />
+  <DataSources>
+    <SqlDataSource ComponentName="dashboardSqlDataSource1">
+      <Name>IQORA</Name>
+    <Connection Name="iqora" FromAppConfig="true" />
+	   <Query Type="SelectQuery" Name="Process By Sequence">
+        <Parameter Name="WorkOrderID" Type="DevExpress.DataAccess.Expression">(System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)([Parameters.WorkOrderID])</Parameter>
+        <Parameter Name="WorkCenterID" Type="DevExpress.DataAccess.Expression">(System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)([Parameters.WorkCenterID])</Parameter>
+        <Tables>
+          <Table Name="V_MIC_PROCESS_BY_SEQ" X="40" Y="80" Width="310" Height="647" />
+        </Tables>
+        <Columns>
+          <AllColumns Table="V_MIC_PROCESS_BY_SEQ" />
+        </Columns>
+        <Filter>[V_MIC_PROCESS_BY_SEQ.WORK_CENTER_ID] = ?WorkCenterID And [V_MIC_PROCESS_BY_SEQ.WORKORDER_ID] = ?WorkOrderID</Filter>
+        <GroupFilter></GroupFilter>
+      </Query>
+      <Query Type="SelectQuery" Name="Production and Rejects">
+        <Tables>
+          <Table Name="V_MIC_TA_LABOR" X="30" Y="10" Width="220" Height="875" />
+        </Tables>
+        <Columns>
+          <Column Table="V_MIC_TA_LABOR" Name="ID" />
+          <Column Table="V_MIC_TA_LABOR" Name="WORKORDER_ID" Alias="Work Order" />
+          <Column Table="V_MIC_TA_LABOR" Name="PREV_PROCESS_DATE" Alias="Started" />
+          <Column Table="V_MIC_TA_LABOR" Name="PROCESS_DATE" Alias="Ended" />
+          <Column Table="V_MIC_TA_LABOR" Name="COMMENT1" Alias="Bin Sequence #" />
+          <Column Table="V_MIC_TA_LABOR" Name="PROCESS_QTY" />
+          <Column Table="V_MIC_TA_LABOR" Name="REJECT_QTY" />
+          <Column Table="V_MIC_TA_LABOR" Name="PARTNO_ID" />
+          <Expression Alias="Year">GETYEAR([V_MIC_TA_LABOR.PROCESS_DATE])</Expression>
+          <Expression Alias="Date">GETDATE([V_MIC_TA_LABOR.PROCESS_DATE])</Expression>
+        </Columns>
+      </Query>
+      <ResultSchema>
+        <DataSet Name="IQORA">
+          <View Name="Process By Sequence">
+            <Field Name="ID" Type="Int64" />
+            <Field Name="PCMON_MEASURE_DEVICE_ID" Type="Int64" />
+            <Field Name="DATA_VALUE" Type="Decimal" />
+            <Field Name="CAPAB_NAME" Type="String" />
+            <Field Name="CAPAB_DESCRIP" Type="String" />
+            <Field Name="PCMON_DEVICE_CAPAB_ID" Type="Int64" />
+            <Field Name="SEQ" Type="Int64" />
+            <Field Name="UOM" Type="String" />
+            <Field Name="ITEMNO" Type="String" />
+            <Field Name="REV" Type="String" />
+            <Field Name="CLASS" Type="String" />
+            <Field Name="DESCRIP" Type="String" />
+            <Field Name="DESCRIP2" Type="String" />
+            <Field Name="ARINVT_ID" Type="Decimal" />
+            <Field Name="TIME_STAMP" Type="DateTime" />
+            <Field Name="STANDARD_ID" Type="Decimal" />
+            <Field Name="MFGNO" Type="String" />
+            <Field Name="WORK_CENTER_ID" Type="Decimal" />
+            <Field Name="EQNO" Type="String" />
+            <Field Name="CNTR_DESC" Type="String" />
+            <Field Name="SPC_INSPECTION_ID" Type="Decimal" />
+            <Field Name="HIST_ILLUM_PART_ID" Type="Int64" />
+            <Field Name="WORKORDER_ID" Type="Int64" />
+            <Field Name="FG_LOTNO" Type="String" />
+            <Field Name="SAMPLE_SEQ" Type="Int64" />
+            <Field Name="PCMON_DEVICE_ID" Type="Int64" />
+            <Field Name="PROD_DATE" Type="DateTime" />
+            <Field Name="SHIFT" Type="String" />
+            <Field Name="COMMENT1" Type="String" />
+            <Field Name="PREV_PROCESS_DATE" Type="DateTime" />
+            <Field Name="PROCESS_DATE" Type="DateTime" />
+          </View>
+          <View Name="Production and Rejects">
+            <Field Name="ID" Type="Int64" />
+            <Field Name="Work Order" Type="Int64" />
+            <Field Name="Started" Type="DateTime" />
+            <Field Name="Ended" Type="DateTime" />
+            <Field Name="Bin Sequence #" Type="String" />
+            <Field Name="PROCESS_QTY" Type="Decimal" />
+            <Field Name="REJECT_QTY" Type="Decimal" />
+            <Field Name="PARTNO_ID" Type="Int64" />
+            <Field Name="Year" Type="Decimal" />
+            <Field Name="Date" Type="DateTime" />
+          </View>
+        </DataSet>
+      </ResultSchema>
+      <ConnectionOptions CloseConnection="true" />
+      <CalculatedFields>
+        <CalculatedField Name="Quality %" Expression="Sum([PROCESS_QTY]) / (Sum([REJECT_QTY]) + Sum([PROCESS_QTY]))" DataType="Auto" DataMember="Production and Rejects" />
+        <CalculatedField Name="aDate" Expression="GetDate([TIME_STAMP])" DataType="Auto" DataMember="Process By Sequence" />
+      </CalculatedFields>
+    </SqlDataSource>
+  </DataSources>
+  <Parameters>
+    <Parameter Name="WorkOrderID" Type="System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" Value="72795" Description="Work Order ID" />
+    <Parameter Name="WorkCenterID" Type="System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" Value="3691" Description="Work Center ID" />
+    <Parameter Name="pDate" Type="System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" Value="2017-09-13T00:00:00-04:00" />
+  </Parameters>
+  <Items>
+    <Pivot ComponentName="pivotDashboardItem1" Name="Capabilities by Bin Sequence" DataSource="dashboardSqlDataSource1" DataMember="Process By Sequence">
+      <DataItems>
+        <Dimension DataMember="CAPAB_NAME" SortOrder="Descending" DefaultId="DataItem0" />
+        <Measure DataMember="DATA_VALUE" SummaryType="Average" DefaultId="DataItem3">
+          <NumericFormat FormatType="Number" Precision="0" Unit="Ones" IncludeGroupSeparator="true" />
+        </Measure>
+        <Dimension DataMember="TIME_STAMP" DateTimeGroupInterval="None" DefaultId="DataItem2">
+          <DateTimeFormat DateHourMinuteFormat="Short" DateTimeFormat="Short" ExactDateFormat="Minute" />
+        </Dimension>
+        <Dimension DataMember="COMMENT1" DefaultId="DataItem1" />
+      </DataItems>
+      <Rows>
+        <Row DefaultId="DataItem0" />
+        <Row DefaultId="DataItem1" />
+        <Row DefaultId="DataItem2" />
+      </Rows>
+      <Values>
+        <Value DefaultId="DataItem3" />
+      </Values>
+      <AutoExpandRowGroups>true</AutoExpandRowGroups>
+      <ShowColumnGrandTotals>false</ShowColumnGrandTotals>
+      <ShowRowTotals>false</ShowRowTotals>
+      <LayoutType>Tabular</LayoutType>
+    </Pivot>
+    <Chart ComponentName="chartDashboardItem2" Name="Capabilities By Sequence Time Stamp" DataSource="dashboardSqlDataSource1" DataMember="Process By Sequence" FilterString="[DataItem2] = 'BARREL_TEMP' And [DataItem1] = ?pDate">
+      <DataItems>
+        <Dimension DataMember="TIME_STAMP" DateTimeGroupInterval="DateHourMinute" DefaultId="DataItem4">
+          <DateTimeFormat ExactDateFormat="Second" />
+        </Dimension>
+        <Dimension DataMember="CAPAB_NAME" Name="Capability" SortOrder="Descending" DefaultId="DataItem2" />
+        <Measure DataMember="DATA_VALUE" SummaryType="Average" DefaultId="DataItem0">
+          <NumericFormat FormatType="Number" Precision="0" Unit="Ones" IncludeGroupSeparator="true" />
+        </Measure>
+        <Dimension DataMember="aDate" DateTimeGroupInterval="None" DefaultId="DataItem1" />
+        <Dimension DataMember="COMMENT1" DefaultId="DataItem3" />
+      </DataItems>
+      <HiddenDimensions>
+        <Dimension DefaultId="DataItem1" />
+      </HiddenDimensions>
+      <SeriesDimensions>
+        <SeriesDimension DefaultId="DataItem2" />
+        <SeriesDimension DefaultId="DataItem3" />
+      </SeriesDimensions>
+      <Arguments>
+        <Argument DefaultId="DataItem4" />
+      </Arguments>
+      <Panes>
+        <Pane Name="Pane 1">
+          <Series>
+            <Simple SeriesType="StackedLine">
+              <Value DefaultId="DataItem0" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+    </Chart>
+    <Grid ComponentName="gridDashboardItem1" Name="Production By Sequence and Work Order" DataSource="dashboardSqlDataSource1" DataMember="Production and Rejects" FilterString="[DataItem0] = ?WorkOrderID And [DataItem9] = ?pDate">
+      <DataItems>
+        <Dimension DataMember="Work Order" DefaultId="DataItem0">
+          <NumericFormat FormatType="General" />
+        </Dimension>
+        <Dimension DataMember="Bin Sequence #" DefaultId="DataItem1" />
+        <Dimension DataMember="Started" SortOrder="Descending" DateTimeGroupInterval="DateHourMinuteSecond" DefaultId="DataItem2">
+          <DateTimeFormat DateHourMinuteFormat="Short" ExactDateFormat="Minute" />
+        </Dimension>
+        <Dimension DataMember="Ended" SortOrder="Descending" DateTimeGroupInterval="DateHourMinuteSecond" DefaultId="DataItem3" />
+        <Measure DataMember="PROCESS_QTY" Name="Produced" DefaultId="DataItem4">
+          <NumericFormat FormatType="Number" Precision="0" Unit="Ones" IncludeGroupSeparator="true" />
+        </Measure>
+        <Measure DataMember="REJECT_QTY" Name="Rejected" DefaultId="DataItem5">
+          <NumericFormat FormatType="Number" Precision="0" Unit="Ones" IncludeGroupSeparator="true" />
+        </Measure>
+        <Measure DataMember="Quality %" DefaultId="DataItem6">
+          <NumericFormat FormatType="Percent" IncludeGroupSeparator="true" />
+        </Measure>
+        <Dimension DataMember="Date" DateTimeGroupInterval="None" DefaultId="DataItem9" />
+      </DataItems>
+      <HiddenDimensions>
+        <Dimension DefaultId="DataItem9" />
+      </HiddenDimensions>
+      <GridColumns>
+        <GridDimensionColumn Weight="55.68181818181818">
+          <Dimension DefaultId="DataItem0" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="147.15909090909091">
+          <Dimension DefaultId="DataItem1" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="123.29545454545455">
+          <Dimension DefaultId="DataItem2" />
+        </GridDimensionColumn>
+        <GridDimensionColumn Weight="50.909090909090907">
+          <Dimension DefaultId="DataItem3" />
+        </GridDimensionColumn>
+        <GridMeasureColumn Weight="49.31818181818182">
+          <Measure DefaultId="DataItem4" />
+        </GridMeasureColumn>
+        <GridMeasureColumn Weight="47.727272727272727">
+          <Measure DefaultId="DataItem5" />
+        </GridMeasureColumn>
+        <GridMeasureColumn Weight="50.909090909090907">
+          <Measure DefaultId="DataItem6" />
+        </GridMeasureColumn>
+      </GridColumns>
+      <GridOptions ColumnWidthMode="Manual" />
+    </Grid>
+    <TreeView ComponentName="treeViewDashboardItem1" Name="Filter Capability" DataSource="dashboardSqlDataSource1" DataMember="Process By Sequence">
+      <DataItems>
+        <Dimension DataMember="CAPAB_NAME" DefaultId="DataItem0" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension DefaultId="DataItem0" />
+      </FilterDimensions>
+    </TreeView>
+    <Chart ComponentName="chartDashboardItem1" Name="Capabilities By Sequence Time Stamp" DataSource="dashboardSqlDataSource1" DataMember="Process By Sequence" FilterString="[DataItem2] = 'CYCLE_COUNT'">
+      <DataItems>
+        <Dimension DataMember="TIME_STAMP" DateTimeGroupInterval="DateHour" DefaultId="DataItem4">
+          <DateTimeFormat ExactDateFormat="Second" />
+        </Dimension>
+        <Dimension DataMember="CAPAB_NAME" Name="Capability" SortOrder="Descending" DefaultId="DataItem2" />
+        <Measure DataMember="DATA_VALUE" SummaryType="Average" DefaultId="DataItem0">
+          <NumericFormat FormatType="Number" Precision="0" Unit="Ones" IncludeGroupSeparator="true" />
+        </Measure>
+      </DataItems>
+      <SeriesDimensions>
+        <SeriesDimension DefaultId="DataItem2" />
+      </SeriesDimensions>
+      <Arguments>
+        <Argument DefaultId="DataItem4" />
+      </Arguments>
+      <Panes>
+        <Pane Name="Pane 1">
+          <Series>
+            <Simple SeriesType="StackedLine">
+              <Value DefaultId="DataItem0" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+    </Chart>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup Orientation="Vertical">
+      <LayoutGroup Weight="49.225268176400476">
+        <LayoutItem DashboardItem="treeViewDashboardItem1" Weight="15.682656826568266" />
+        <LayoutItem DashboardItem="gridDashboardItem1" Weight="39.298892988929886" />
+        <LayoutItem DashboardItem="pivotDashboardItem1" Weight="45.018450184501845" />
+      </LayoutGroup>
+      <LayoutGroup Orientation="Vertical" Weight="50.774731823599524">
+        <LayoutItem DashboardItem="chartDashboardItem2" Weight="50" />
+        <LayoutItem DashboardItem="chartDashboardItem1" Weight="50" />
+      </LayoutGroup>
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

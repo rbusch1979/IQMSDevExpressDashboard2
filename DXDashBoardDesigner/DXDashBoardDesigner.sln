@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.26730.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DXDashBoardDesigner", "DXDashBoardDesigner\DXDashBoardDesigner.csproj", "{F7970F4B-0779-487F-BD87-078B18FA42BC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevExpressWebDashboard", "DevExpressWebDashboard\DevExpressWebDashboard.csproj", "{37425136-0052-42B7-A26F-4F9026D4F826}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestHarness", "TestHarness\TestHarness.csproj", "{0008D3C6-596C-4702-B35B-43501F578F91}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{F7970F4B-0779-487F-BD87-078B18FA42BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7970F4B-0779-487F-BD87-078B18FA42BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7970F4B-0779-487F-BD87-078B18FA42BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37425136-0052-42B7-A26F-4F9026D4F826}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37425136-0052-42B7-A26F-4F9026D4F826}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37425136-0052-42B7-A26F-4F9026D4F826}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37425136-0052-42B7-A26F-4F9026D4F826}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0008D3C6-596C-4702-B35B-43501F578F91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0008D3C6-596C-4702-B35B-43501F578F91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0008D3C6-596C-4702-B35B-43501F578F91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0008D3C6-596C-4702-B35B-43501F578F91}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

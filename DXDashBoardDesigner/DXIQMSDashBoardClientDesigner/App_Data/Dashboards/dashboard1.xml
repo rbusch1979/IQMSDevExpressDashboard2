@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard>
+  <Title Text="New Dashboard" />
+  <DataSources>
+    <SqlDataSource ComponentName="DataSource1">
+      <Name>Categories</Name>
+      <Connection Name="nwindConnection" FromAppConfig="true" />
+      <Query Type="SelectQuery" Name="Categories">
+        <Tables>
+          <Table Name="Categories" />
+        </Tables>
+        <Columns>
+          <Column Table="Categories" Name="CategoryID" />
+          <Column Table="Categories" Name="CategoryName" />
+          <Column Table="Categories" Name="Description" />
+          <Column Table="Categories" Name="Picture" />
+          <Column Table="Categories" Name="Icon_17" />
+          <Column Table="Categories" Name="Icon_25" />
+        </Columns>
+      </Query>
+      <ConnectionOptions CloseConnection="true" />
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <Grid ComponentName="gridDashboardItem1" Name="Grid 1" DataSource="DataSource1" DataMember="Categories">
+      <GridOptions />
+    </Grid>
+    <ListBox ComponentName="listBoxDashboardItem1" Name="List Box 1" DataSource="DataSource1" DataMember="Categories" />
+  </Items>
+  <LayoutTree>
+    <LayoutGroup Weight="100">
+      <LayoutItem DashboardItem="gridDashboardItem1" Weight="100" />
+      <LayoutItem DashboardItem="listBoxDashboardItem1" Weight="100" />
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

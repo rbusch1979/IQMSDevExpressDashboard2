@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="bundles/dx.dashboard-control.bundle.css" rel="stylesheet" />
+    <script src="bundles/dx.dashboard-control.third-party.min.js"></script>
+    <script src="bundles/dx.dashboard-control.bundle.js"></script>
+
+    <script>
+
+        window.onload = function () {
+            // Adds required HTML resources to the DOM.
+            DevExpress.Dashboard.ResourceManager.embedBundledResources();
+
+            // Creates a new Web Dashboard control with specified settings.
+            var dashboardControl = new DevExpress.Dashboard.DashboardControl(document.getElementById("web-dashboard"), {
+                // Configures an URL where the Web Dashboard's server-side is hosted.
+                endpoint: "/api/Dashboard", workingMode: "Designer", EnableCustomSql:"true", extensions: {"dashboard-panel":(control)=> new DevExpress.Dashboard.DashboardPanelExtension(control)}
+            });
+
+            // Renders the created dashboard.
+           // dashboardControl.EnableCustomSql = true;
+            dashboardControl.render();
+           
+        };
+
+       
+    </script>
+
+</head>
+<body>
+    <div id="web-dashboard" style="position:absolute; top:0; right:0; bottom:0; left:0" >
+
+    </div>
+</body>
+</html>

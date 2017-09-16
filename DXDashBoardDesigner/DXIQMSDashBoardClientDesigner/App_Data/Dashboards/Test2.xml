@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard CurrencyCulture="en-US">
+  <Title Text="Test Designer" />
+  <DataSources>
+    <SqlDataSource ComponentName="dashboardSqlDataSource1">
+      <Name>iqora</Name>
+      <Connection Name="iqora" FromAppConfig="true" />
+      <Query Type="CustomSqlQuery" Name="ARINVT">
+        <Sql>select * from arinvt</Sql>
+      </Query>
+      <ResultSchema>
+        <DataSet Name="iqora">
+          <View Name="ARINVT">
+            <Field Name="ID" Type="Int64" />
+            <Field Name="ARCUSTO_ID" Type="Int64" />
+            <Field Name="CLASS" Type="String" />
+            <Field Name="ITEMNO" Type="String" />
+            <Field Name="REV" Type="String" />
+            <Field Name="DESCRIP" Type="String" />
+            <Field Name="DESCRIP2" Type="String" />
+            <Field Name="AVG_COST" Type="Double" />
+            <Field Name="VENDOR_ID" Type="Int64" />
+            <Field Name="UNIT" Type="String" />
+            <Field Name="BLEND" Type="String" />
+            <Field Name="CUSER1" Type="String" />
+            <Field Name="CUSER2" Type="String" />
+            <Field Name="CUSER3" Type="String" />
+            <Field Name="NUSER1" Type="Double" />
+            <Field Name="NUSER2" Type="Double" />
+            <Field Name="NUSER3" Type="Double" />
+            <Field Name="BOM_ACTIVE" Type="String" />
+            <Field Name="ONHAND" Type="Double" />
+            <Field Name="RG_ONHAND" Type="Double" />
+            <Field Name="NON_SALABLE" Type="String" />
+            <Field Name="NON_CONFORM_TOTAL" Type="Double" />
+            <Field Name="SERIALIZED" Type="String" />
+            <Field Name="SAFETY_STOCK" Type="Double" />
+            <Field Name="MIN_ORDER_QTY" Type="Double" />
+            <Field Name="MAX_ORDER_QTY" Type="Double" />
+            <Field Name="MULTIPLE" Type="Double" />
+            <Field Name="YTDQTY" Type="Int64" />
+            <Field Name="PTDQTY" Type="Int64" />
+            <Field Name="CODE" Type="String" />
+            <Field Name="LDATE" Type="DateTime" />
+            <Field Name="LBUY_DATE" Type="DateTime" />
+            <Field Name="TYPE" Type="String" />
+            <Field Name="SERIES" Type="String" />
+            <Field Name="LEAD_DAYS" Type="Int16" />
+            <Field Name="LEAD_TIME" Type="String" />
+            <Field Name="SPG" Type="Double" />
+            <Field Name="DRYTIME" Type="Int16" />
+            <Field Name="DRYTEMP" Type="String" />
+            <Field Name="RGPRCNT" Type="Int16" />
+            <Field Name="AUTO_MJO" Type="String" />
+            <Field Name="MFG_QUAN" Type="Double" />
+            <Field Name="AUX_AMT" Type="Double" />
+            <Field Name="STDQUAN" Type="Int64" />
+            <Field Name="LOW_LEVEL_CODE" Type="Int16" />
+            <Field Name="MPS_CODE" Type="String" />
+            <Field Name="ARINVT_FAMILY_ID" Type="Int64" />
+            <Field Name="BACKFLUSH" Type="String" />
+            <Field Name="DRAWING" Type="String" />
+            <Field Name="ECNO" Type="String" />
+            <Field Name="STD_PRICE" Type="Double" />
+            <Field Name="STD_COST" Type="Double" />
+            <Field Name="STANDARD_ID" Type="Int64" />
+            <Field Name="ACCT_ID_SALES" Type="Int64" />
+            <Field Name="ACCT_ID_INV" Type="Int64" />
+            <Field Name="MFG_SPLIT" Type="String" />
+            <Field Name="PRICE_PER_1000" Type="String" />
+            <Field Name="COMIS_PRCNT" Type="Double" />
+            <Field Name="UNQUE_DATE_IN" Type="String" />
+            <Field Name="SHELF_LIFE" Type="Int16" />
+            <Field Name="ECODE" Type="String" />
+            <Field Name="EID" Type="Int64" />
+            <Field Name="EDATE_TIME" Type="DateTime" />
+            <Field Name="ECOPY" Type="String" />
+            <Field Name="ACCT_ID_PPV" Type="Int64" />
+            <Field Name="ACCT_ID_OH_DISPO" Type="Int64" />
+            <Field Name="ACCT_ID_LABOR_DISPO" Type="Int64" />
+            <Field Name="ACCT_ID_HOLDING" Type="Int64" />
+            <Field Name="ITEM_TYPE_ID" Type="Int64" />
+            <Field Name="NMFC_ID" Type="Int64" />
+            <Field Name="VOLUME" Type="Double" />
+            <Field Name="AUTO_MRP_REORD_POINT" Type="Double" />
+            <Field Name="AUTO_MRP_ORDER_QTY" Type="Double" />
+            <Field Name="AUTO_MRP_LEAD_DAYS" Type="Single" />
+            <Field Name="EPLANT_ID" Type="Int64" />
+            <Field Name="COMMISSIONS_ID" Type="Int64" />
+            <Field Name="STD_COST_CONTROL" Type="String" />
+            <Field Name="PO_SCOPE" Type="Int16" />
+            <Field Name="PO_SAFETY" Type="Int16" />
+            <Field Name="PO_MOVE_RANGE" Type="Int16" />
+            <Field Name="LM_IMAGE_FILENAME" Type="String" />
+            <Field Name="CYCLE_COUNT_CODE" Type="String" />
+            <Field Name="CUSER4" Type="String" />
+            <Field Name="CUSER5" Type="String" />
+            <Field Name="CUSER6" Type="String" />
+            <Field Name="CUSER7" Type="String" />
+            <Field Name="CUSER8" Type="String" />
+            <Field Name="CUSER9" Type="String" />
+            <Field Name="CUSER10" Type="String" />
+            <Field Name="NUSER4" Type="Double" />
+            <Field Name="NUSER5" Type="Double" />
+            <Field Name="NUSER6" Type="Double" />
+            <Field Name="NUSER7" Type="Double" />
+            <Field Name="NUSER8" Type="Double" />
+            <Field Name="NUSER9" Type="Double" />
+            <Field Name="NUSER10" Type="Double" />
+            <Field Name="PROCESS_SAFETY_STOCK" Type="String" />
+            <Field Name="MX_GROUP_ID" Type="Int64" />
+            <Field Name="FR_GROUP_ID" Type="Int64" />
+            <Field Name="SETUP_CHARGE" Type="Double" />
+            <Field Name="MOVE_TIME" Type="Single" />
+            <Field Name="CARTONS_PALLET" Type="Double" />
+            <Field Name="PIECES_CARTON" Type="Double" />
+            <Field Name="AUTO_MRP_FIRM_WO" Type="String" />
+            <Field Name="FLOOR_BACKFLUSH" Type="String" />
+            <Field Name="MPS" Type="String" />
+            <Field Name="CUM_LEADTIME" Type="Double" />
+            <Field Name="PHANTOM" Type="String" />
+            <Field Name="CRITICAL_FENCE" Type="Int16" />
+            <Field Name="USER_NAME" Type="String" />
+            <Field Name="PK_HIDE" Type="String" />
+            <Field Name="ACCT_ID_PRODVAR" Type="Int64" />
+            <Field Name="PHANTOM_ONHAND" Type="Double" />
+            <Field Name="LM_LABELS_ID" Type="Int64" />
+            <Field Name="DRIVE_PHANTOM_NEGATIVE" Type="String" />
+            <Field Name="NO_STDCOST_RECALC" Type="String" />
+            <Field Name="ACCT_ID_INTPLANT_SALES" Type="Int64" />
+            <Field Name="IMAGE_FILENAME" Type="String" />
+            <Field Name="NON_ALLOCATE_TOTAL" Type="Double" />
+            <Field Name="INSP_RECEIPT_THRES" Type="Int32" />
+            <Field Name="INSP_RECEIPT_COUNT" Type="Int32" />
+            <Field Name="COST_STANDARD_ID_FUTURE" Type="Int64" />
+            <Field Name="COST_STANDARD_ID" Type="Int64" />
+            <Field Name="COST_DESCRIP_FUTURE" Type="String" />
+            <Field Name="COST_DESCRIP" Type="String" />
+            <Field Name="COST_CALC_DATE_FUTURE" Type="DateTime" />
+            <Field Name="COST_CALC_DATE" Type="DateTime" />
+            <Field Name="AUTO_MRP_INCLUDE_VMI" Type="String" />
+            <Field Name="PROD_CODE_ID" Type="Int64" />
+            <Field Name="DO_NOT_DISPO_FLOOR_PARTIAL" Type="String" />
+            <Field Name="INFO_SO" Type="String" />
+            <Field Name="INFO_PO" Type="String" />
+            <Field Name="EXCL_RECEIPT_TIME_PPV" Type="String" />
+            <Field Name="CYCLE_COUNT_ID" Type="Int64" />
+            <Field Name="CYCLE_COUNT_DATE" Type="DateTime" />
+            <Field Name="NON_MATERIAL" Type="String" />
+            <Field Name="MFG_MIN_QTY" Type="Double" />
+            <Field Name="MFG_MULTIPLE" Type="Double" />
+            <Field Name="BUYER_CODE_ID" Type="Int64" />
+            <Field Name="COST_CALC_BATCH" Type="Int64" />
+            <Field Name="INTRASTAT_CODE" Type="String" />
+            <Field Name="FAB_START" Type="String" />
+            <Field Name="MFG_SAFETY_QTY" Type="Double" />
+            <Field Name="PLANNER_CODE_ID" Type="Int64" />
+            <Field Name="IS_LOT_MANDATORY" Type="String" />
+            <Field Name="PK_WEIGHT" Type="Double" />
+            <Field Name="PK_PTSPER" Type="Double" />
+            <Field Name="DO_NOT_SCHED_FORECAST_WO" Type="String" />
+            <Field Name="IS_PALLET" Type="String" />
+            <Field Name="IS_AUTO_RT_LABELS" Type="String" />
+            <Field Name="IS_LINKED_TO_SERIAL" Type="String" />
+            <Field Name="FR_INCLUDE" Type="String" />
+            <Field Name="MIN_CPK" Type="Double" />
+            <Field Name="LBL_ASSIST_LAST_PRINT" Type="DateTime" />
+            <Field Name="LBL_ASSIST_PRINT_INTERVAL" Type="Int32" />
+            <Field Name="COC_EXCLUDE" Type="String" />
+            <Field Name="ICT_REORD_POINT" Type="Double" />
+            <Field Name="ICT_REPLENISH_SCOPE_DAYS" Type="Int16" />
+            <Field Name="ICT_LEAD_DAYS" Type="Int16" />
+            <Field Name="ICT_SHIP_TO_ID" Type="Int64" />
+            <Field Name="AUTO_MRP_KANBAN_LOT_SIZE" Type="Double" />
+            <Field Name="ICT_FIRE_TRIGGER" Type="String" />
+            <Field Name="COLOR_GROUP_ID" Type="Int64" />
+            <Field Name="FR_WO_TIME_FENCE" Type="Single" />
+            <Field Name="PK_LENGTH" Type="Double" />
+            <Field Name="PK_WIDTH" Type="Double" />
+            <Field Name="PK_HEIGHT" Type="Double" />
+            <Field Name="PALLET_LENGTH" Type="Double" />
+            <Field Name="PALLET_WIDTH" Type="Double" />
+            <Field Name="PALLET_HEIGHT" Type="Double" />
+            <Field Name="PALLET_VOLUME" Type="Double" />
+            <Field Name="PALLET_PTSPER" Type="Double" />
+            <Field Name="PALLET_WEIGHT" Type="Double" />
+            <Field Name="LENGTH" Type="Double" />
+            <Field Name="WIDTH" Type="Double" />
+            <Field Name="GAUGE" Type="Double" />
+            <Field Name="IS_BY_PRODUCT" Type="String" />
+            <Field Name="EXCLUDE_FROM_COMMISSIONS" Type="String" />
+            <Field Name="AUTO_RT_LABELS_PK_SEQ" Type="Int16" />
+            <Field Name="PALLET_PATTERN_ID" Type="Int64" />
+            <Field Name="WEB_SALABLE" Type="String" />
+            <Field Name="PO_MULTIPLE" Type="Double" />
+            <Field Name="FIFO_THRESHOLD" Type="Single" />
+            <Field Name="COST_STANDARD_ID_FORECAST" Type="Int64" />
+            <Field Name="COST_STANDARD_ID_BUDGET" Type="Int64" />
+            <Field Name="COST_DESCRIP_FORECAST" Type="String" />
+            <Field Name="COST_DESCRIP_BUDGET" Type="String" />
+            <Field Name="COST_CALC_DATE_FORECAST" Type="DateTime" />
+            <Field Name="COST_CALC_DATE_BUDGET" Type="DateTime" />
+            <Field Name="KEEP_LABEL_BOM_INTERPLANT_TRAN" Type="String" />
+            <Field Name="ECO_ORIG_CLASS" Type="String" />
+            <Field Name="ACCT_ID_WIP" Type="Int64" />
+            <Field Name="IRV32_NO_PLAN_WO" Type="String" />
+            <Field Name="INFO_REC" Type="String" />
+            <Field Name="IS_LOT_DATE_MANDATORY" Type="String" />
+            <Field Name="USE_THIS_UOM_FOR_MRP" Type="String" />
+            <Field Name="WAIT_TIME" Type="Single" />
+            <Field Name="BOL_CALC_OVERRIDE" Type="String" />
+            <Field Name="RFQ_USE_STD_COST" Type="String" />
+            <Field Name="ACCT_ID_PHYS_VAR" Type="Int64" />
+            <Field Name="ACCT_ID_INV_COST_REV" Type="Int64" />
+            <Field Name="EXCLUDE_BACKFLUSH" Type="String" />
+            <Field Name="NONTAXABLE" Type="String" />
+            <Field Name="ACCT_ID_SHIPMENT" Type="Int64" />
+            <Field Name="AUTO_MRP_EXCLUDE_HARD_ALLOC" Type="String" />
+            <Field Name="MIN_PPK" Type="Double" />
+            <Field Name="RUN_RULES" Type="String" />
+            <Field Name="RTPM_TRG_RTLABEL" Type="String" />
+            <Field Name="REBATE_PARAMS_ID" Type="Int64" />
+            <Field Name="TARIFF_CODE_ID" Type="Int64" />
+            <Field Name="WEBDIRECT_LEAD_DAYS" Type="Int32" />
+            <Field Name="USE_COST_DEFAULT_STANDARD_ID" Type="String" />
+            <Field Name="ARINVT_GROUP_ID" Type="Int64" />
+            <Field Name="CLONED_FROM_ARINVT_ID" Type="Int64" />
+            <Field Name="USE_LOT_CHARGE" Type="String" />
+            <Field Name="LOT_CHARGE" Type="Double" />
+            <Field Name="UNIQUE_DISPO_LOC" Type="String" />
+            <Field Name="HEIJUNKA_SINCE_SCHED_DEMAND" Type="Double" />
+            <Field Name="CONFIG_CODE" Type="String" />
+            <Field Name="AUTO_MRP_INCLUDE_VMI_MFG_CALC" Type="String" />
+            <Field Name="FR_WO_SCOPE" Type="Int32" />
+            <Field Name="AUTO_MRP_APPLY_TO_SCHED_ALLOC" Type="String" />
+            <Field Name="PHANTOM_COMPONENTS_ON_SO" Type="String" />
+            <Field Name="SCHED_CASCADE_PARENT_MTO" Type="String" />
+            <Field Name="AUTO_POP_SERV_CTR" Type="String" />
+            <Field Name="EXCL_MARK_WO_MAT_XCPT" Type="String" />
+            <Field Name="IS_ALC" Type="String" />
+            <Field Name="MARK_ORD_DETAIL_MTO" Type="String" />
+            <Field Name="MSDS_AUTHORABLE" Type="String" />
+            <Field Name="IS_MSDS" Type="String" />
+            <Field Name="MSDS_UPLOAD" Type="String" />
+            <Field Name="NONTAXABLE_PO" Type="String" />
+            <Field Name="OVERRIDE_REC_LOC" Type="String" />
+            <Field Name="LBL_LAST_PRINT" Type="DateTime" />
+            <Field Name="IS_DROP_SHIP" Type="String" />
+            <Field Name="MAX_PALLET_STACK" Type="Int16" />
+            <Field Name="LOOSE_INV_MOVE_CLASS_ID" Type="Int64" />
+            <Field Name="PACK_INV_MOVE_CLASS_ID" Type="Int64" />
+            <Field Name="PALLET_INV_MOVE_CLASS_ID" Type="Int64" />
+            <Field Name="PK_UNIT_TYPE" Type="String" />
+            <Field Name="LOOSE_MOVE_RANK_COUNT" Type="Int64" />
+            <Field Name="PACK_MOVE_RANK_COUNT" Type="Int64" />
+            <Field Name="PALLET_MOVE_RANK_COUNT" Type="Int64" />
+            <Field Name="EXCL_WORKORDER_MAT" Type="String" />
+            <Field Name="FIFO" Type="String" />
+            <Field Name="COMPANY_ID" Type="Int64" />
+            <Field Name="RECV_LOCATION_ID" Type="Int64" />
+            <Field Name="SPC_INSPECTION_ID" Type="Int64" />
+            <Field Name="AR_DISCOUNT_WATERFALL_ID" Type="Int64" />
+            <Field Name="WMS_INV_GROUP_ID" Type="Int64" />
+            <Field Name="LOOSE_MOVE_RANK_LOCK" Type="String" />
+            <Field Name="PACK_MOVE_RANK_LOCK" Type="String" />
+            <Field Name="PALLET_MOVE_RANK_LOCK" Type="String" />
+            <Field Name="LOOSE_WEIGHT" Type="Double" />
+            <Field Name="LOOSE_VOLUME" Type="Double" />
+            <Field Name="LOOSE_LENGTH" Type="Double" />
+            <Field Name="LOOSE_WIDTH" Type="Double" />
+            <Field Name="LOOSE_HEIGHT" Type="Double" />
+            <Field Name="EXCL_FROM_CTP_EXCEPTION" Type="String" />
+            <Field Name="CORE_SIZE" Type="Double" />
+            <Field Name="OD" Type="Double" />
+            <Field Name="PS_CONVERT_INFO" Type="String" />
+            <Field Name="CYCLE_COUNT_RANK_LOCK" Type="String" />
+            <Field Name="MIN_SELL_QTY" Type="Double" />
+            <Field Name="INSP_LEAD_DAYS" Type="Int16" />
+            <Field Name="IS_LOT_EXPIRY_DATE_MANDATORY" Type="String" />
+            <Field Name="ICT_TRUCK_PTSPER" Type="Double" />
+            <Field Name="SAFETY_STOCK2" Type="Double" />
+            <Field Name="COST_CALC_USER_NAME" Type="String" />
+            <Field Name="SHELF_LIFE2" Type="Int16" />
+            <Field Name="ICT_AUTO_MRP_ORDER_QTY" Type="Double" />
+            <Field Name="ICT_SHIP_PULL_DEMAND" Type="String" />
+            <Field Name="PLT_WRP_USE_QC" Type="String" />
+            <Field Name="PLT_WRP_LOC_ID" Type="Int64" />
+            <Field Name="HARD_ALLOC_ROUND_PRECISION" Type="Int16" />
+            <Field Name="BACKFLUSH_BY_SERIAL" Type="String" />
+            <Field Name="GROUP_CODE" Type="String" />
+            <Field Name="PROPRIETARY_EFFECT_DATE" Type="DateTime" />
+            <Field Name="PROPRIETARY_DEACTIVE_DATE" Type="DateTime" />
+            <Field Name="DEMAND_CHANGE" Type="String" />
+            <Field Name="TAX_CLASS_ID" Type="Int64" />
+            <Field Name="DISCOUNT_GROUPS_ID" Type="Int64" />
+            <Field Name="PHYS_CHAR_VOLUME" Type="Double" />
+            <Field Name="PHANTOM_KIT_USE_COMP_PRICE" Type="String" />
+            <Field Name="ASSY1_EXCLUDE_FORECAST_WO" Type="String" />
+            <Field Name="LAST_DEMAND_CHANGE" Type="DateTime" />
+          </View>
+        </DataSet>
+      </ResultSchema>
+      <ConnectionOptions CloseConnection="true" />
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <Grid ComponentName="gridDashboardItem1" Name="Grid 1" DataSource="dashboardSqlDataSource1" DataMember="ARINVT">
+      <DataItems>
+        <Dimension DataMember="DESCRIP" DefaultId="DataItem0" />
+        <Dimension DataMember="ITEMNO" DefaultId="DataItem1" />
+      </DataItems>
+      <GridColumns>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem1" />
+        </GridDimensionColumn>
+        <GridDimensionColumn>
+          <Dimension DefaultId="DataItem0" />
+        </GridDimensionColumn>
+      </GridColumns>
+      <GridOptions />
+    </Grid>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup>
+      <LayoutItem DashboardItem="gridDashboardItem1" />
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>
